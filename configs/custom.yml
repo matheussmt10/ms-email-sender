@@ -1,0 +1,35 @@
+serverless-offline:
+  httpPort: 4000
+  lambdaPort: 4002
+
+regions:
+  dev: us-east-1
+  hml: us-east-1
+  prd: us-east-1
+
+node_envs:
+  dev: 'local'
+  hml: 'development'
+  prd: 'production'
+
+log_level:
+  dev: 'debug'
+  hml: 'info'
+  prd: 'info'
+
+project_id: 'm-services-395301'
+
+cloud_provider: gcp
+
+scripts: ${file(configs/scripts/${self:custom.cloud_provider}.yml)}
+
+salt_hash:
+  dev: 12
+  hml: 12
+  prd: 12
+
+x_api_key:
+  prd: 'dbb4b052-23b9-48c4-b885-9751d8be0dc5'
+
+aws_access_key_id:
+aws_secret_access_key:
